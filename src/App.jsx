@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from "react";
+import { FaCalendar, FaAward, FaClipboardList, FaSlidersH, FaUserAlt, FaHeadset, FaDoorOpen, FaAutoprefixer } from "react-icons/fa";
 import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function SideBar() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="main-container">
+      <div className="wrapper d-flex align-items-stretch mt-5 bg-priamry">
+        <nav id="sidebar">
+          <div className="img bg-wrap text-center py-4" style={{ marginLeft: "20%" }}>
+            <div className="user-logo col-lg-3">
+              <div className="img"><FaUserAlt size={90} style={{ marginLeft: "10%" }} /></div>
+              <h3>TIME <FaAutoprefixer /> LANE</h3>
+              <p className="user-info">John Doe</p> {/* Replace "John Doe" with the user's name or email */}
+            </div>
 
-export default App
+          </div>
+          <ul className="list-unstyled components mb-5">
+            <li className="active">
+              <a href="#"> <FaCalendar className="icon" /> Home</a>
+            </li>
+            <li>
+              <a href="#"><FaAward className="icon" /> Important </a>
+            </li>
+            <li>
+              <a href="#"><FaClipboardList className="icon" /> Top Review</a>
+            </li>
+            <li>
+              <a href="#"><FaSlidersH className="icon" /> Settings</a>
+            </li>
+            <li>
+              <a href="#"><FaHeadset className="icon" /> Support</a>
+            </li>
+            <li>
+              <a href="#"><FaDoorOpen className="icon" /> Sign Out</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  );
+};
