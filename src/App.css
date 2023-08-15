@@ -1,7 +1,7 @@
 body{
   background-color: #fff;
 }
-/* Add this CSS to style the sidebar */
+/* sidebar */
 
 #sidebar {
   height: 59rem; 
@@ -17,8 +17,8 @@ body{
 }
 
 #sidebarCollapse {
-  background-color: #007bff; /* Change this to your desired primary color */
-  border-color: #007bff; /* Change this to your desired primary color */
+  background-color: #007bff; /* Change this to desired primary color */
+  border-color: #007bff; /* Change this to desired primary color */
   color: #fff;
 }
 
@@ -78,5 +78,5 @@ body{
 }
 
 .icon {
-  margin-right: 8px; /* Adjust the margin as needed */
+  margin-right: 8px; 
 }

@@ -7,10 +7,10 @@ export default function SideBar() {
       <div className="wrapper d-flex align-items-stretch mt-5 bg-priamry">
         <nav id="sidebar">
           <div className="img bg-wrap text-center py-4" style={{ marginLeft: "20%" }}>
+          
             <div className="user-logo col-lg-3">
               <div className="img"><FaUserAlt size={90} style={{ marginLeft: "10%" }} /></div>
               <h3>TIME <FaAutoprefixer /> LANE</h3>
-              <p className="user-info">John Doe</p> {/* Replace "John Doe" with the user's name or email */}
             </div>
 
           </div>
@@ -31,7 +31,7 @@ export default function SideBar() {
               <a href="#"><FaHeadset className="icon" /> Support</a>
             </li>
             <li>
-              <a href="#"><FaDoorOpen className="icon" /> Sign Out</a>
+              <a href="#"><FaDoorOpen className="icon" /> Sign Out @ <p className="user-info">John Doe</p> </a>
             </li>
           </ul>
         </nav>
