@@ -1,13 +1,17 @@
 import React from "react";
 import { FaCalendar, FaAward, FaClipboardList, FaSlidersH, FaUserAlt, FaHeadset, FaDoorOpen, FaAutoprefixer } from "react-icons/fa";
-import './App.css'
+import '../../../src/App.css'
+import {
+  Link,
+} from "react-router-dom";
+
 export default function SideBar() {
   return (
     <div className="main-container">
       <div className="wrapper d-flex align-items-stretch mt-5 bg-priamry">
         <nav id="sidebar">
           <div className="img bg-wrap text-center py-4" style={{ marginLeft: "20%" }}>
-          
+
             <div className="user-logo col-lg-3">
               <div className="img"><FaUserAlt size={90} style={{ marginLeft: "10%" }} /></div>
               <h3>TIME <FaAutoprefixer /> LANE</h3>
@@ -16,7 +20,7 @@ export default function SideBar() {
           </div>
           <ul className="list-unstyled components mb-5">
             <li className="active">
-              <a href="#"> <FaCalendar className="icon" /> Home</a>
+              <Link to="/"><FaCalendar className="icon" /> Home</Link>
             </li>
             <li>
               <a href="#"><FaAward className="icon" /> Important </a>

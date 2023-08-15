@@ -1,5 +1,5 @@
 import React from "react";
-export default function  support(){
+export default function  Support(){
     return(
         <div>
             <h1> Hello, I  am support</h1>
