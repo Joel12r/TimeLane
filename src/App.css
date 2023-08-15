@@ -1,42 +1,82 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body{
+  background-color: #fff;
+}
+/* Add this CSS to style the sidebar */
+
+#sidebar {
+  height: 59rem; 
+  min-width: 250px;
+  max-width: 250px;
+  background: #001B48; /* Sidebar background color */
+  color: #fff;
+  transition: all 0.3s;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#sidebar.active {
+  margin-left: -250px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#sidebarCollapse {
+  background-color: #007bff; /* Change this to your desired primary color */
+  border-color: #007bff; /* Change this to your desired primary color */
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.img.bg-wrap {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-.card {
-  padding: 2em;
+.user-logo {
+  margin-bottom: 1rem;
 }
 
-.read-the-docs {
-  color: #888;
+.user-logo h3 {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-unstyled li {
+  padding: 0.5rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.list-unstyled li.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.list-unstyled a {
+  color: #ccc;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.list-unstyled a:hover {
+  color: #fff;
+}
+
+.list-unstyled .fa {
+  width: 25px;
+}
+
+.notif {
+  position: relative;
+}
+
+.notif small {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #dc3545;
+}
+
+.icon {
+  margin-right: 8px; /* Adjust the margin as needed */
 }
