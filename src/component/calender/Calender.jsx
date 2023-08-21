@@ -62,6 +62,7 @@ export default function Calendar() {
     setDeletingCardIndex(index);
     setShowDeleteModal(true);
   };
+
   // Item delete
   const handleDeleteItem = (cardIndex, itemIndex) => {
     setDeletingCardIndex(cardIndex);
@@ -92,6 +93,7 @@ export default function Calendar() {
     updatedCards[index].newItem = '';
     setCards(updatedCards);
   };
+
   // list popup model 
   const handleItemClicked = (cardIndex, itemIndex) => {
     setSelectedCardIndex(cardIndex);
@@ -142,7 +144,7 @@ export default function Calendar() {
                                 key={itemIndex}
                                 className="mb-5 clickable-item"
                                 style={{ listStyle: "none", border: "dotted", width: "20rem", height: "4rem" }}
-                                onClick={() => handleItemClicked(index, itemIndex)} // Add this line
+                                onClick={() => handleItemClicked(index, itemIndex)}
                               >
                                 {item}
 
@@ -180,6 +182,7 @@ export default function Calendar() {
           </div>
         </div>
       </div>
+
       {/* Modal for New Card Title */}
       {
         showModal && (
@@ -188,7 +191,7 @@ export default function Calendar() {
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title">Enter Card Title</h5>
-                  <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => setShowModal(false)}>
+                  <button type=" button" className="btn btn-sm btn-danger close" data-dismiss="modal" aria-label="Close" onClick={() => setShowModal(false)}>
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
@@ -285,13 +288,12 @@ export default function Calendar() {
                 <div className="container">
                   <div className="row">
                     <div className="col-lg-6 mb-5">
-                      {/* Display item details based on selectedCardIndex and selectedItemIndex */}
                       {selectedCardIndex !== null && selectedItemIndex !== null && (
                         <>
                           <p>Name: {cards[selectedCardIndex].items[selectedItemIndex]}</p>
 
                           <p>Description: {itemDescription}</p>
-                          {/* Item description input */}
+                          {/* Item description input, needs better implementation */}
                           <textarea
                             className="form-control"
                             placeholder="Enter item description"
@@ -304,6 +306,7 @@ export default function Calendar() {
                     </div>
                   </div>
                 </div>
+
                 {showDeleteItemModal && (
                   <div className="modal" tabIndex="-1" role="dialog" style={{ display: "block", backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
                     <div className="modal-dialog modal-dialog-centered" role="document">
@@ -348,6 +351,7 @@ export default function Calendar() {
                 >
                   <FaRegTrashAlt />
                 </button>
+                {/* Once item has been deleted automatically close the item  model */}
               </div>
             </div>
           </div>
