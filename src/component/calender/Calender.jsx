@@ -300,50 +300,13 @@ export default function Calendar() {
                             value={itemDescription}
                             onChange={(e) => setItemDescription(e.target.value)}
                           />
-                          {/* <button className="btn btn-primary mt-2" onClick={handleSaveDescription}>Save</button> */}
+                          <button className="btn btn-primary mt-2" onClick={handleSaveDescription}>Save</button> 
                         </>
                       )}
+                      
                     </div>
                   </div>
                 </div>
-
-                {showDeleteItemModal && (
-                  <div className="modal" tabIndex="-1" role="dialog" style={{ display: "block", backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
-                    <div className="modal-dialog modal-dialog-centered" role="document">
-                      <div className="modal-content">
-                        <div className="modal-header">
-                          <h5 className="modal-title">Confirm Delete</h5>
-                          <button type="button" className="btn btn-sm btn-danger close" data-dismiss="modal" aria-label="Close" onClick={() => setShowDeleteItemModal(false)}>
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div className="modal-body ">
-                          Are you sure you want to delete this item from the list?
-                        </div>
-                        <div className="modal-footer">
-                          <button
-                            type="button"
-                            className="btn btn-secondary"
-                            onClick={() => {
-                              setShowDeleteItemModal(false);
-                              setDeletingCardIndex(null);
-                              setDeletingItemIndex(null);
-                            }}
-                          >
-                            Cancel
-                          </button>
-                          <button
-                            type="button"
-                            className="btn btn-danger"
-                            onClick={confirmDeleteItem}
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
                 <button
                   className="btn btn-danger mt-3"
                   style={{ marginLeft: "66rem" }}
@@ -357,6 +320,45 @@ export default function Calendar() {
           </div>
         </div>
       )}
+
+
+{showDeleteItemModal && (
+  <div className="modal" tabIndex="-1" role="dialog" style={{ display: "block", backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
+    <div className="modal-dialog modal-dialog-centered" role="document">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">Confirm Delete</h5>
+          <button type="button" className="btn btn-sm btn-danger close" data-dismiss="modal" aria-label="Close" onClick={() => setShowDeleteItemModal(false)}>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div className="modal-body">
+          Are you sure you want to delete this item from the list?
+        </div>
+        <div className="modal-footer">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={() => {
+              setShowDeleteItemModal(false);
+              setDeletingCardIndex(null);
+              setDeletingItemIndex(null);
+            }}
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            className="btn btn-danger"
+            onClick={confirmDeleteItem}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
 
     </div >
 
