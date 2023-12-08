@@ -4,6 +4,7 @@ import "animate.css";
 
 import { FaPenAlt, FaRegTrashAlt, FaSave, FaAlignLeft } from "react-icons/fa";
 import "../../../src/App.css";
+import SideCalender from "./SideCalender";
 
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -117,125 +118,133 @@ export default function Calendar() {
 
   return (
     <div className="section ">
-      <div className="container">
-        <div className="row mb-5">
-          <div className="col-md-3 col-lg-2 offset-md-5 offset-lg-5 text-center mt-5">
-            <p className="month">{monthYear}</p>
-            <h1 className="date">{day}</h1>
-          </div>
+      <div className="row">
+        <div className="col-lg-3">
+         <SideCalender />
         </div>
+        <div className="col-lg-9">
+          <div className="row mb-5">
+            <div className="col-md-3 col-lg-2 offset-md-5 offset-lg-5 text-center mt-5">
+              <p className="month">{monthYear}</p>
+              <h1 className="date">{day}</h1>
+            </div>
+          </div>
 
-        <button className="add-item" onClick={handleAddNewCard}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125"
-              stroke="#fffffff"
+          <button className="add-item" onClick={handleAddNewCard}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
               stroke-width="2"
-            ></path>
-            <path
-              d="M17 15V18M17 21V18M17 18H14M17 18H20"
-              stroke="#fffffff"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-          ADD ITEM
-        </button>
-     
-        <div className="row">
-          <div
-            className="col-lg-12"
-            style={{ overflowX: "auto", whiteSpace: "nowrap" }}
-          >
-            {cards.map((card, index) => (
-              <div className="col-lg-4 d-inline-block mt-5" key={index}>
-                <div
-                  className="card add-item mx-2"
-                  style={{ backgroundColor: "transparent", border: "none" }}
-                >
-                  <div className="card-body">
-                    <div className="row">
-                      <div className="col-lg-9 col-sm-8 mt-2 mb-3">
-                        <h5 className="card-title">{card.title}</h5>
-                      </div>
-                      <div className="col-lg-3 col-sm-4">
-                        <button
-                          className="btn edit col-lg-2 col-sm-2"
-                          onClick={() => handleEditCard(index)}
-                        >
-                          <FaPenAlt />
-                        </button>
-                        <button
-                          className="btn delete col-lg-2 col-sm-2"
-                          onClick={() => handleDeleteCard(index)}
-                        >
-                          <FaRegTrashAlt />
-                        </button>
-                      </div>
-                    </div>
-                    <ul>
-                      <div className="container">
-                        <div className="row">
-                          <div className="col-sm-6">
-                            {card.items.map((item, itemIndex) => (
-                              <li
-                                key={itemIndex}
-                                className="mb-5 clickable-item animate__animated animate__fadeIn"
-                                style={{}}
-                                onClick={() =>
-                                  handleItemClicked(index, itemIndex)
-                                }
-                              >
-                                {item}
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125"
+                stroke="#fffffff"
+                stroke-width="2"
+              ></path>
+              <path
+                d="M17 15V18M17 21V18M17 18H14M17 18H20"
+                stroke="#fffffff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            ADD ITEM
+          </button>
 
-                                <div className="mt-2 mb-3">
-                                  <button type="button" className="btn btn-sm">
-                                    {" "}
-                                    <FaAlignLeft />
-                                  </button>
-                                </div>
-                              </li>
-                            ))}
-                          </div>
+          <div className="row">
+            <div
+              className="col-lg-12"
+              style={{ overflowX: "auto", whiteSpace: "nowrap" }}
+            >
+              {cards.map((card, index) => (
+                <div className="col-lg-4 d-inline-block mt-5" key={index}>
+                  <div
+                    className="card add-item mx-2"
+                    style={{ backgroundColor: "transparent", border: "none" }}
+                  >
+                    <div className="card-body">
+                      <div className="row">
+                        <div className="col-lg-9 col-sm-8 mt-2 mb-3">
+                          <h5 className="card-title">{card.title}</h5>
+                        </div>
+                        <div className="col-lg-3 col-sm-4">
+                          <button
+                            className="btn edit col-lg-2 col-sm-2"
+                            onClick={() => handleEditCard(index)}
+                          >
+                            <FaPenAlt />
+                          </button>
+                          <button
+                            className="btn delete col-lg-2 col-sm-2"
+                            onClick={() => handleDeleteCard(index)}
+                          >
+                            <FaRegTrashAlt />
+                          </button>
                         </div>
                       </div>
-                    </ul>
-                    <div className="input-group ">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Add an item"
-                        required
-                        value={card.newItem || ""}
-                        onChange={(e) => {
-                          const updatedCards = [...cards];
-                          updatedCards[index].newItem = e.target.value;
-                          setCards(updatedCards);
-                        }}
-                      />
-                      <button
-                        className="btn btn-primary"
-                        onClick={() => handleAddItem(index, card.newItem)}
-                      >
-                        Add
-                      </button>
+                      <ul>
+                        <div className="container">
+                          <div className="row">
+                            <div className="col-sm-6">
+                              {card.items.map((item, itemIndex) => (
+                                <li
+                                  key={itemIndex}
+                                  className="mb-5 clickable-item animate__animated animate__fadeIn"
+                                  style={{}}
+                                  onClick={() =>
+                                    handleItemClicked(index, itemIndex)
+                                  }
+                                >
+                                  {item}
+
+                                  <div className="mt-2 mb-3">
+                                    <button
+                                      type="button"
+                                      className="btn btn-sm"
+                                    >
+                                      {" "}
+                                      <FaAlignLeft />
+                                    </button>
+                                  </div>
+                                </li>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </ul>
+                      <div className="input-group ">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Add an item"
+                          required
+                          value={card.newItem || ""}
+                          onChange={(e) => {
+                            const updatedCards = [...cards];
+                            updatedCards[index].newItem = e.target.value;
+                            setCards(updatedCards);
+                          }}
+                        />
+                        <button
+                          className="btn btn-primary"
+                          onClick={() => handleAddItem(index, card.newItem)}
+                        >
+                          Add
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </div>  
       </div>
 
       {/* Modal for New Card Title */}
