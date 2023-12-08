@@ -178,13 +178,13 @@ export default function Calendar() {
                             className="btn edit col-lg-2 col-sm-2"
                             onClick={() => handleEditCard(index)}
                           >
-                            <FaPenAlt />
+                            <FaPenAlt className="edit" />
                           </button>
                           <button
                             className="btn delete col-lg-2 col-sm-2"
                             onClick={() => handleDeleteCard(index)}
                           >
-                            <FaRegTrashAlt />
+                            <FaRegTrashAlt className="edit" />
                           </button>
                         </div>
                       </div>
